@@ -1,1 +1,18 @@
 <h2>Available drones</h2>
+
+<h1>Book list</h1>
+<hr>
+{{#each drones}}
+  <div>
+    <p> {{name}} </p>
+    <p> {{propellers}} </p>
+    <p> {{maxspeed}} </p>
+    <!--route param drones id from mongoDB -->
+   
+    <a href="/drones/{{_id}}/edit">Edit</a>
+    <form action="/drone/{{_id}}/delete" method="POST" >
+    <button type="submit">Delete</button>
+    </form>
+  </div>
+
+{{/each}}
